@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://turtleml.dev/schema/abci-envelope-0.1.json",
+  "title": "TurtleML ABCI Envelope 0.1",
+  "type": "object",
+  "required": ["protocol", "version", "message_type", "message_id", "source", "subject", "payload", "provenance", "scope", "authority", "timestamp"],
+  "properties": {
+    "protocol": {"const": "TurtleML-ABCI"},
+    "version": {"const": "0.1"},
+    "message_type": {"enum": ["claim", "authority_request", "authority_decision", "audit"]},
+    "message_id": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["node_id", "name", "role"],
+      "properties": {
+        "node_id": {"type": "string"},
+        "name": {"type": "string"},
+        "role": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "subject": {"type": "string"},
+    "payload": {"type": "object"},
+    "provenance": {"type": "object"},
+    "scope": {"type": "object"},
+    "authority": {"type": ["object", "null"]},
+    "timestamp": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}

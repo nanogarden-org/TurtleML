@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use TurtleML or adapt its architectural documentation, please cite the project using this metadata."
+title: "TurtleML"
+type: software
+authors:
+  - family-names: "Bronson"
+    given-names: "Robin Abigayle"
+repository-code: "https://github.com/nanogarden-org/TurtleML"
+url: "https://github.com/nanogarden-org/TurtleML"
+license: Apache-2.0
+version: "0.1.0-provenance"
+date-released: "2026-08-21"
+abstract: >-
+  TurtleML is a nested systems-architecture concept for composing independently
+  operable units into larger systems-of-systems through explicit boundaries,
+  interfaces, recursive containment, and implementation-independent contracts.
+keywords:
+  - systems architecture
+  - systems of systems
+  - recursive composition
+  - modular architecture
+  - provenance

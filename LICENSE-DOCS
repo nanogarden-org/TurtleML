@@ -1,0 +1,22 @@
+TurtleML Documentation License
+
+Unless otherwise stated in a specific file, the documentation, architectural prose, diagrams, theory, examples, explanatory materials, and other non-software expressive works authored for TurtleML are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+Copyright © 2026 Robin Abigayle Bronson.
+
+You may share and adapt the covered material, including for commercial purposes, provided you comply with the attribution and other requirements of CC BY 4.0.
+
+Canonical license deed:
+https://creativecommons.org/licenses/by/4.0/
+
+Canonical legal code:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution should, where reasonably practicable, identify:
+- TurtleML
+- Robin Abigayle Bronson
+- the canonical repository: https://github.com/nanogarden-org/TurtleML
+- the applicable version, release, commit, or source document when known
+- whether changes were made
+
+This documentation license does not apply to software source code covered by the repository's Apache-2.0 LICENSE, nor to third-party material that carries its own license or attribution notice.

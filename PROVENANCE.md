@@ -29,10 +29,12 @@ TurtleML does **not** claim invention or ownership of generic ideas such as:
 - systems-of-systems
 - graph composition
 - layered control
+- formal grammars
+- graph rewriting
 
 Those concepts have extensive prior histories.
 
-The TurtleML provenance claim concerns the identifiable project-level synthesis published here: the **TurtleML name**, turtle boundary metaphor, recursively composable bounded units, explicit interface-mediated exchange, independence of internal implementation from external contract, nested system-of-systems interpretation, accompanying terminology, diagrams, prose, executable reference material, invariants, falsification criteria, and their evolution as a coherent architecture.
+The TurtleML provenance claim concerns the identifiable project-level synthesis published here: the **TurtleML name**, turtle boundary metaphor, recursively composable bounded operational units, explicit exchange-mediated composition, independence of internal implementation from external contract, nested system-of-systems interpretation, accompanying terminology, diagrams, prose, executable reference material, invariants, falsification criteria, and their evolution as a coherent architecture.
 
 A later architecture may legitimately resemble TurtleML through independent development or shared antecedents. This provenance record exists to make comparison possible rather than to presume copying.
 
@@ -41,15 +43,44 @@ A later architecture may legitimately resemble TurtleML through independent deve
 A TurtleML "turtle" is a bounded operational unit that:
 
 1. can be reasoned about as a unit at its own scale;
-2. exposes explicit interfaces at its boundary;
+2. exposes explicit exchange contracts at its boundary;
 3. may contain smaller turtles;
 4. may itself participate inside a larger turtle;
-5. can vary its internal implementation while preserving compatible external contracts; and
-6. composes through interfaces rather than requiring global knowledge of every internal mechanism.
+5. can vary its internal implementation while preserving compatible external contracts;
+6. composes through boundary exchange rather than requiring global knowledge of every internal mechanism; and
+7. may retain locally meaningful state, behavior, control, policy, capabilities, responsibilities, or failure modes.
 
 This creates a scale-recursive architecture in which similar reasoning can be applied across tool, component, workflow, subsystem, system, and system-of-systems levels.
 
-See `docs/INVARIANTS.md` for the current structural fingerprint and `docs/FALSIFICATION.md` for testable limits.
+A working contract schema introduced during the initial documentation phase is:
+
+```text
+R = (I, O, C, S, P)
+```
+
+representing Inputs, Outputs, Capabilities, Exposed State, and Policy. This tuple is a working architectural model, not a mandatory serialization format or final claim that every TurtleML interface must contain exactly five fields.
+
+See `docs/ARCHITECTURE.md` for the current model, `docs/INVARIANTS.md` for the structural fingerprint, and `docs/FALSIFICATION.md` for testable limits.
+
+## Structural recursion versus operational recursion
+
+TurtleML distinguishes recursive structural generation from recursive operational composition.
+
+A recursively generated graph, circuit, tree, or geometry may be structurally recursive without being TurtleML. TurtleML additionally asks whether recursively composed units remain meaningful operational systems at their own scale and interact through explicit boundaries.
+
+This distinction is part of the present TurtleML formulation and should be tested rather than treated as an automatic novelty claim.
+
+## Adjacent prior art and convergent work
+
+TurtleML explicitly records neighboring projects and traditions rather than implying intellectual isolation.
+
+During the initial public documentation phase, **MorphoHDL** (`paradigms-of-intelligence/morpho`) was identified as adjacent work. Its published README describes an experimental hardware-description language and graph-rewrite system for growing circuits through structural recursion, with Parametric L-Systems and functional HDLs identified as inspirations.
+
+MorphoHDL and TurtleML share territory involving recursion, composition, locally specified structure, and graph-like connectivity. Their current central abstractions differ: MorphoHDL focuses on recursive structural rewriting of cells into circuit/graph structure, while TurtleML focuses on recursive operational composition of bounded systems through explicit exchange contracts.
+
+No claim is made that MorphoHDL derives from TurtleML or that TurtleML derives from MorphoHDL. The comparison is recorded as adjacent prior art / independent neighboring work so that future claims can remain narrow and auditable.
+
+See `docs/RELATED_WORK.md`.
 
 ## Licensing and attribution
 
@@ -82,6 +113,16 @@ A dedicated provenance foundation branch was created immediately after the initi
 - this provenance record;
 - architectural invariants; and
 - falsification criteria.
+
+### 2026-08-21 — Exchange-contract architecture formalized
+
+The early architecture was sharpened from generic nested systems language toward **recursive operational composition through explicit exchange boundaries**.
+
+The working boundary-contract schema `R = (I, O, C, S, P)` was documented, and the distinction between structural recursion and operational recursion was made explicit.
+
+### 2026-08-21 — MorphoHDL recorded as adjacent prior art
+
+MorphoHDL was added to the related-work record as neighboring recursive-computation work. The record distinguishes its recursive structural circuit/graph growth from TurtleML's recursive operational systems composition while explicitly allowing complementary use.
 
 Future substantive releases should add entries here or in a linked changelog so that changes to the architecture remain traceable over time.
 

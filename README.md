@@ -10,6 +10,12 @@ A concise working definition is:
 
 The architecture is not defined merely by nesting. A turtle may carry local state, behavior, control, capabilities, policy, responsibilities, or failure modes while participating inside a larger system.
 
+## Branch status
+
+This `provenance-foundation` branch is the documentation and provenance record for the architecture. It contains the expanded conceptual model, related-work framing, licensing notes, and falsification criteria; it intentionally does not contain the runnable reference implementation.
+
+The validated `0.1.0-alpha` Python implementation is maintained on the repository's default [`main` branch](https://github.com/nanogarden-org/TurtleML). At the current checkpoint, its six tests pass and its pump-policy example runs successfully.
+
 ## Exchange contracts
 
 A useful initial model for a turtle boundary is:
@@ -48,7 +54,7 @@ The surrounding system should interact through the boundary contract rather than
 
 ## Project status
 
-TurtleML is an early-stage architecture and reference implementation. This repository intentionally publishes the architecture, terminology, invariants, provenance, related work, and falsification criteria alongside the code so that reuse can remain open while lineage remains visible.
+TurtleML is an early-stage architecture with a small, separately maintained Python reference implementation. This branch intentionally publishes the architecture, terminology, invariants, provenance, related work, and falsification criteria so that reuse can remain open while lineage remains visible.
 
 ## Related work
 
@@ -94,7 +100,9 @@ The provenance claim concerns the specific TurtleML project: its named architect
 
 ## Canonical project
 
-Repository: `nanogarden-org/TurtleML`
+Repository: [`nanogarden-org/TurtleML`](https://github.com/nanogarden-org/TurtleML)
+
+Runnable implementation: [`main`](https://github.com/nanogarden-org/TurtleML/tree/main)
 
 Original author: **Robin Abigayle Bronson**
 

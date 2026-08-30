@@ -30,7 +30,7 @@ The current implementation is deliberately dependency-light Python. It proves th
 - authority can expire and be audited; and
 - a node can disappear without collapsing the simulation.
 
-At this checkpoint, the test suite passes **6/6 tests**, and the pump-policy example runs successfully. GitHub Actions runs the test suite and example on Python 3.11 and 3.12; the commands below are also the canonical local verification path.
+At this checkpoint, the test suite passes **6/6 tests**, and the pump-policy example runs successfully. The commands below are the canonical manual verification path.
 
 ## Quick start
 

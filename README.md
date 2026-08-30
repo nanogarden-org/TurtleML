@@ -18,28 +18,26 @@ TurtleML is intentionally **not** a monolithic smart-home platform, agent framew
 6. **Every node truthfully declares capabilities**
 7. **Recursive composition:** a region can itself behave as a turtle
 
-## First falsification target
+## Current status
 
-Three logical nodes are enough:
+`0.1.0-alpha` — executable architecture skeleton on the default `main` branch.
 
-- **Observer** — senses or simulates a condition and emits a claim
-- **Controller** — can request an action
-- **Policy boundary** — decides whether that action is authorized
+The current implementation is deliberately dependency-light Python. It proves the authority and provenance semantics before hardware, RF links, LLMs, or optimization:
 
-The architecture passes its first test only if claims can move between nodes, knowledge does not imply permission, denied actions remain denied, granted authority is scoped and expires, actions can be traced back to claims and decisions, and a node can disappear without collapsing the whole simulation.
+- observer claims can move between nodes;
+- knowledge does not imply permission;
+- policy can deny or grant a scoped action;
+- authority can expire and be audited; and
+- a node can disappear without collapsing the simulation.
 
-## Project status
-
-`0.1.0-alpha` — executable architecture skeleton.
-
-The current implementation is deliberately boring Python. That is a feature: the project is proving semantics before hardware, RF links, LLMs, or optimization.
+At this checkpoint, the test suite passes **6/6 tests**, and the pump-policy example runs successfully. There is no hosted CI workflow in this alpha yet, so the commands below are the canonical verification path.
 
 ## Quick start
 
 ```bash
 python -m venv .venv
 # Windows
-.venv\Scripts\activate
+.venv\\Scripts\\activate
 # Linux/macOS
 source .venv/bin/activate
 
@@ -47,6 +45,14 @@ pip install -e ".[dev]"
 pytest
 python examples/pump_demo.py
 ```
+
+## Repository map
+
+- `src/turtleml/` — reference package for claims, authority, transport, and recursive regions.
+- `schemas/abci-envelope.schema.json` — initial machine-readable exchange envelope.
+- `examples/pump_demo.py` — end-to-end observer/controller/policy example.
+- `tests/` — executable invariants and authority-boundary tests.
+- `PROJECT_CHARTER.md`, `ROADMAP.md`, and `docs/` — scope, architecture, and decision records.
 
 ## Language strategy
 
@@ -67,6 +73,10 @@ No MQTT, LoRa, Meshtastic, BLE, SDR, cameras, LLMs, Kubernetes, cloud control pl
 
 A **Turtle** is a node or bounded region with identity, declared capabilities, local state, local implementation, and an engineered interface to other turtles. A turtle may contain other turtles.
 
+## Related branch
+
+The `provenance-foundation` branch contains the expanded provenance and research record. It is documentation-only and is intentionally not the default runnable branch.
+
 ## License
 
-MIT License. See `LICENSE`.
+MIT License. See [LICENSE](./LICENSE).

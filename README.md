@@ -111,3 +111,7 @@ The `provenance-foundation` branch contains the expanded provenance and research
 ## License
 
 MIT License. See [LICENSE](./LICENSE).
+
+## Automated verification
+
+The Verification workflow runs the existing test suite on Windows and Linux with Python 3.11 and 3.12, on pull requests, pushes to `main`, and manual runs. These are reference-implementation checks, not certification of deployment or integration readiness. Runtime language choices remain open to further operating-condition tests.

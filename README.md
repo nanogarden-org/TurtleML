@@ -1,5 +1,18 @@
 # TurtleML
 
+## Hiring reviewer summary
+
+| Question | Answer |
+| --- | --- |
+| Business problem | An AI system can confuse information it receives with permission to act, especially when several nodes exchange claims. |
+| Author contribution | Designed an executable architecture skeleton with explicit claims, scoped authority grants, role policy, audit events, and a pump-policy demonstration. |
+| Working today | 0.1.0-alpha Python reference model demonstrates role-policy decisions, actor/action/target scoping, grant expiry, and simulated node communication. |
+| Inspect the evidence | [Authority tests](tests/test_authority.py) · [Pump-policy demo](examples/pump_demo.py) |
+| Limits | Revocation of already-issued grants is not demonstrated by the current grant model. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system. |
+| Relevant assignments | AI permission boundaries, policy contracts, distributed workflow design, and failure-case analysis. |
+
+[Engineering case study](docs/hiring-case-study.md) · [Run and challenge the work](#quick-start)
+
 **TurtleML** is a local-first reference architecture for recursive, heterogeneous AI/ML nodes that communicate through stable authority and provenance contracts.
 
 > Ecological evolution inside; engineered contracts at the seams.
@@ -16,7 +29,7 @@ For the origin of that claim, publication boundary, and ways to falsify it, see 
 2. **Experience may propagate faster than authority**
 3. **Heterogeneous internals; stable contracts**
 4. **Cloud is augmentation, not dependency**
-5. **Authority is scoped, expiring, revocable, and auditable**
+5. **Authority must be scoped, expiring, revocable, and auditable** — current grants demonstrate scope and expiry; issued-grant revocation remains to be demonstrated.
 6. **Every node truthfully declares capabilities**
 7. **Recursive composition:** a region can itself behave as a turtle
 
@@ -39,7 +52,7 @@ If you can construct one, open an issue or provide a minimal failing example.
 
 `0.1.0-alpha` — executable architecture skeleton on the default `main` branch.
 
-The current implementation is deliberately dependency-light Python. It proves the authority and provenance semantics before hardware, RF links, LLMs, or optimization:
+The current implementation is deliberately dependency-light Python. It demonstrates a limited authority and provenance slice before hardware, RF links, LLMs, or optimization:
 
 - observer claims can move between nodes;
 - knowledge does not imply permission;

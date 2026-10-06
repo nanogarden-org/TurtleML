@@ -22,7 +22,7 @@ These are this repository's design choices and formulation. The project does not
 
 ## Public chronology
 
-Git history identifies artifact versions and recorded dates. Commit dates and retained snapshots alone do not establish when an artifact became publicly accessible. Public-availability claims require a separately recorded publication or archival anchor. This packet does not establish a verified first-publication date. Neither repository chronology nor publication evidence establishes universal novelty, exclusive ownership of abstract ideas, or derivation by later work.
+Git history identifies artifact versions and recorded dates. Commit dates and retained snapshots alone do not establish when an artifact became publicly accessible. Public-availability claims require a separately recorded publication or archival anchor. The first public release date is not recorded here. Neither repository chronology nor publication evidence establishes universal novelty, exclusive ownership of abstract ideas, or derivation by later work.
 
 ## Why the model is intentionally a toy
 
@@ -45,7 +45,7 @@ Open an issue with the smallest reproducible failure or a related-work reference
 
 ## Evidence and challenge scope
 
-Revocation of already-issued grants is not demonstrated by the current grant model. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system.
+The current grant model checks scope and expiry; it has no issued-grant revocation mechanism. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system.
 
 [Authority tests](tests/test_authority.py) · [Pump-policy demo](examples/pump_demo.py)
 

@@ -1,5 +1,18 @@
 # TurtleML
 
+## Project overview
+
+| Question | Answer |
+| --- | --- |
+| Business problem | An AI system can confuse information it receives with permission to act, especially when several nodes exchange claims. |
+| What I built | Designed an executable architecture skeleton with explicit claims, scoped authority grants, role policy, audit events, and a pump-policy demonstration. |
+| Working today | 0.1.0-alpha Python reference model demonstrates role-policy decisions, actor/action/target scoping, grant expiry, and simulated node communication. |
+| Verification | [Authority tests](tests/test_authority.py) · [Pump-policy demo](examples/pump_demo.py) |
+| Limits | The current grant model checks scope and expiry; it has no issued-grant revocation mechanism. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system. |
+| Applications | AI permission boundaries, policy contracts, distributed workflow design, and failure-case analysis. |
+
+[Engineering case study](docs/hiring-case-study.md) · [Run and challenge the work](#quick-start)
+
 **TurtleML** is a local-first reference architecture for recursive, heterogeneous AI/ML nodes that communicate through stable authority and provenance contracts.
 
 > Ecological evolution inside; engineered contracts at the seams.
@@ -8,21 +21,38 @@ TurtleML is intentionally **not** a monolithic smart-home platform, agent framew
 
 > A node may observe, infer, and share knowledge without automatically gaining—or propagating—the authority to act.
 
+For the origin of that claim, publication boundary, and ways to falsify it, see [ORIGIN.md](ORIGIN.md).
+
 ## Core invariants
 
 1. **Signal != feature != inference != claim != authorized action**
 2. **Experience may propagate faster than authority**
 3. **Heterogeneous internals; stable contracts**
 4. **Cloud is augmentation, not dependency**
-5. **Authority is scoped, expiring, revocable, and auditable**
+5. **Authority must be scoped, expiring, revocable, and auditable** — current grants demonstrate scope and expiry; issued-grant revocation is not implemented.
 6. **Every node truthfully declares capabilities**
 7. **Recursive composition:** a region can itself behave as a turtle
+
+## Challenge this architecture
+
+The useful question is not whether the demo runs. It is whether the invariants survive another implementation and hostile edge cases.
+
+Good challenges include:
+
+- a claim that accidentally grants permission;
+- expired or revoked authority that still produces action;
+- a node that lies or drifts about its capabilities;
+- recursive regions whose authority cannot be composed safely;
+- transport that changes semantics while preserving syntax;
+- node disappearance that creates unsafe implicit authority elsewhere.
+
+If you can construct one, open an issue or provide a minimal failing example.
 
 ## Current status
 
 `0.1.0-alpha` — executable architecture skeleton on the default `main` branch.
 
-The current implementation is deliberately dependency-light Python. It proves the authority and provenance semantics before hardware, RF links, LLMs, or optimization:
+The current implementation is deliberately dependency-light Python. It demonstrates a limited authority and provenance slice before hardware, RF links, LLMs, or optimization:
 
 - observer claims can move between nodes;
 - knowledge does not imply permission;
@@ -53,6 +83,7 @@ python examples/pump_demo.py
 - `examples/pump_demo.py` — end-to-end observer/controller/policy example.
 - `tests/` — executable invariants and authority-boundary tests.
 - `PROJECT_CHARTER.md`, `ROADMAP.md`, and `docs/` — scope, architecture, and decision records.
+- `ORIGIN.md` — origin, chronology, related-work boundary, and challenge surface.
 
 ## Language strategy
 

@@ -22,9 +22,7 @@ These are this repository's design choices and formulation. The project does not
 
 ## Public chronology
 
-Repository history documents when particular TurtleML artifacts and formulations were public.
-
-Use that history as evidence of this repository's chronology, not as proof that no earlier related work exists or that later similar work was derived from TurtleML.
+Git history identifies artifact versions and recorded dates. Commit dates and retained snapshots alone do not establish when an artifact became publicly accessible. Public-availability claims require a separately recorded publication or archival anchor. This packet does not establish a verified first-publication date. Neither repository chronology nor publication evidence establishes universal novelty, exclusive ownership of abstract ideas, or derivation by later work.
 
 ## Why the model is intentionally a toy
 
@@ -44,3 +42,13 @@ A meaningful counterexample is more useful than agreement. Try to produce a case
 6. node loss creates an unsafe fallback.
 
 Open an issue with the smallest reproducible failure or a related-work reference that materially changes the framing.
+
+## Evidence and challenge scope
+
+Revocation of already-issued grants is not demonstrated by the current grant model. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system.
+
+[Authority tests](tests/test_authority.py) · [Pump-policy demo](examples/pump_demo.py)
+
+## Submit a useful challenge
+
+[Open an issue](https://github.com/nanogarden-org/TurtleML/issues/new) with the version or commit SHA, invariant challenged, minimal synthetic input, commands or reasoning steps, expected versus observed behavior, and any relevant related-work link. Identify whether the challenge concerns implemented behavior or proposed architecture. Exclude private or unlicensed source material.

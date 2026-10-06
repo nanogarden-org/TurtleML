@@ -1,15 +1,15 @@
 # TurtleML
 
-## Hiring reviewer summary
+## Project overview
 
 | Question | Answer |
 | --- | --- |
 | Business problem | An AI system can confuse information it receives with permission to act, especially when several nodes exchange claims. |
-| Author contribution | Designed an executable architecture skeleton with explicit claims, scoped authority grants, role policy, audit events, and a pump-policy demonstration. |
+| What I built | Designed an executable architecture skeleton with explicit claims, scoped authority grants, role policy, audit events, and a pump-policy demonstration. |
 | Working today | 0.1.0-alpha Python reference model demonstrates role-policy decisions, actor/action/target scoping, grant expiry, and simulated node communication. |
-| Inspect the evidence | [Authority tests](tests/test_authority.py) · [Pump-policy demo](examples/pump_demo.py) |
-| Limits | Revocation of already-issued grants is not demonstrated by the current grant model. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system. |
-| Relevant assignments | AI permission boundaries, policy contracts, distributed workflow design, and failure-case analysis. |
+| Verification | [Authority tests](tests/test_authority.py) · [Pump-policy demo](examples/pump_demo.py) |
+| Limits | The current grant model checks scope and expiry; it has no issued-grant revocation mechanism. Capability truthfulness, hostile transport, and recursive authority safety remain architecture challenges. This is not a production distributed security system. |
+| Applications | AI permission boundaries, policy contracts, distributed workflow design, and failure-case analysis. |
 
 [Engineering case study](docs/hiring-case-study.md) · [Run and challenge the work](#quick-start)
 
@@ -29,7 +29,7 @@ For the origin of that claim, publication boundary, and ways to falsify it, see 
 2. **Experience may propagate faster than authority**
 3. **Heterogeneous internals; stable contracts**
 4. **Cloud is augmentation, not dependency**
-5. **Authority must be scoped, expiring, revocable, and auditable** — current grants demonstrate scope and expiry; issued-grant revocation remains to be demonstrated.
+5. **Authority must be scoped, expiring, revocable, and auditable** — current grants demonstrate scope and expiry; issued-grant revocation is not implemented.
 6. **Every node truthfully declares capabilities**
 7. **Recursive composition:** a region can itself behave as a turtle
 
